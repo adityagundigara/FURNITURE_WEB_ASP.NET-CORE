@@ -1,0 +1,91 @@
+﻿@model List<AddCart>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        div {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+        }
+
+        #summary {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Cart Items</h2>
+    @{
+        decimal totalAmount = 0;
+    }
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <img src="~/Images/AllImages/@item.Images" alt="Alternate Text" />
+            <p>@item.ProductName</p>
+            <p>₹@item.ProductPrice</p>
+            <p>Quantity: 1</p> <!-- Default quantity is 1 for each item -->
+            <form method="post">
+                @Html.Hidden("ProductId", item.ProductId)
+                <button type="submit" name="removeButton">Remove</button>
+            </form>
+            @{
+                decimal itemTotal = item.ProductPrice; // Multiply by default quantity (1 in this case)
+                totalAmount += itemTotal;
+            }
+        </div>
+        <hr />
+    }
+
+    <div id="summary">
+        <h3>Total Payable Amount: ₹@totalAmount</h3>
+    </div>
+
+
+
+
+   
+
+</body>
+</html>

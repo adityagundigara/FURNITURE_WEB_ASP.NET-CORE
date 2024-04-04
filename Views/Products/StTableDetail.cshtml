@@ -1,0 +1,80 @@
+﻿@using FURNITURE_WEB.Models
+@model FURNITURE_WEB.Models.ProductsDataModel
+
+@* <!DOCTYPE html>
+<html>
+<head>
+    <title>Product Detail</title>
+
+</head>
+<body>
+
+    <div class="ProductDetail">
+        <img src="~/Images/AllImages/@Model.ImagePath" class="detail-img">
+        <h5 class="detail-title">@Model.Name</h5>
+        <p>₹@Model.Price</p>
+
+        <form asp-controller="Products" asp-action="CartPage3" method="post" asp-route-id="@Model.Id">
+            <input type="hidden" name="productId" value="@Model.Id" />
+            <input type="hidden" name="productName" value="@Model.Name" />
+            <input type="hidden" name="productPrice" value="@Model.Price" />
+            <label for="Quantity">Quantity:</label>
+            <input type="number" id="Quantity" name="Quantity" value="1" min="1" required />
+            <button type="submit">Add to Cart</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
+
+
+ *@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Detail</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .detail-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .detail-title {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/Images/AllImages/@Model.ImagePath" class="img-fluid detail-img">
+            </div>
+            <div class="col-md-6">
+                <h2 class="detail-title">@Model.Name</h2>
+                <p class="text-muted">₹@Model.Price</p>
+
+                <form asp-controller="Products" asp-action="CartPage3" method="post" asp-route-id="@Model.Id">
+                    <input type="hidden" name="productId" value="@Model.Id" />
+                    <input type="hidden" name="productName" value="@Model.Name" />
+                    <input type="hidden" name="productPrice" value="@Model.Price" />
+                    <div class="form-group">
+                        <label for="Quantity">Quantity:</label>
+                        <input type="number" class="form-control" id="Quantity" name="Quantity" value="1" min="1" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

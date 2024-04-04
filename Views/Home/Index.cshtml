@@ -1,0 +1,107 @@
+﻿@model List<FURNITURE_WEB.Models.FurnitureDataModel>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/homepage.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <div class="btop">
+        <section class="bannersec">
+            <container class="banner">
+                <div class="headingtext">
+                    <p> Trending Product in 2024 </p>
+                    <h2>Make Your Interior More Minimalistic & Modern</h2>
+                    <h5>
+                        Elevate your space with our stylish and comfortable FURNITURE_WEB
+                        pieces
+                    </h5>
+                    <form asp-controller="Products" asp-action="ChairPage" method="get">
+                        <button type="submit" class="clickb">Shop Now</button>
+                    </form>
+
+                </div>
+
+                <div class="imgsec">
+                    <img src="~/Images/bannerimg.png"/>
+                </div>
+            </container>
+        </section>
+    </div>
+
+    <div class="CardBox">
+      @foreach (var furdata in Model)
+        {
+            <div class="Card">
+                <img src="~/Images/AllImages/@furdata.ImagePath" class="card-img-top" >
+                <h5 class="card-title">@furdata.Name</h5>
+                <p>₹@furdata.Price</p>
+            </div>
+        } 
+
+
+    </div>
+
+
+  
+    <p class="text-center fw-bold mt-4" style="font-size:22px; margin-left:280px">Our Products</p>
+    <div class="d-flex mt-5" style="margin-left: 120px; transition: transform 0.3s ease-in-out;">
+        <div>
+            <a href="@Url.Action("StudyTable", "Products")">
+                <img src="~/Images/Logo/StudyLogo.png" style="height: 8vw; width: 8vw; margin-left: 222px" />
+                <p style="margin-left: 240px" class="mt-3 text-black text-decoration-none">Study Table</p>
+            </a>
+        </div>
+        <div>
+            <a href="@Url.Action("ChairPage", "Products")">
+                <img src="~/Images/Logo/ChairLogo.png" style="height: 8vw; width: 8vw; margin-left: 222px" />
+                <p style="margin-left: 260px" class="mt-3 text-black text-decoration-none">Chair</p>
+            </a>
+        </div>
+        <div>
+            <a href="@Url.Action("SofaPage", "Products")">
+                <img src="~/Images/Logo/SofaLogo.png" style="height: 8vw; width: 8vw; margin-left: 222px" />
+                <p style="margin-left: 260px" class="mt-3 text-black text-decoration-none">Sofa</p>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div style="height:20vw;width:100vw;margin-top:230px; background-color:#071730;margin-top:40px; ">
+            <div class="container">
+                <div class="row d-flex justify-content-around" style="color:white; padding-top: 20px;padding-top:100px">
+                    <div class="col-md-3">
+                        <h5 class="text-white">Multimart</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5>Top Categories</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5>Useful Links</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5>Contacts</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

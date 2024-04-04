@@ -1,0 +1,28 @@
+﻿
+@{
+}
+@model FURNITURE_WEB.Models.ProductsDataView
+
+
+<form method="post">
+    <div class="form-group">
+        <label class="control-label">Name:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Price:</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label">Image:</label>
+        <input type="text" asp-for="ImagePath" class="form-control" />
+        <span asp-validation-for="ImagePath" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

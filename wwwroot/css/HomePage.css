@@ -1,0 +1,140 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    margin-right:290px;
+    overflow:scroll;
+}
+
+
+
+.clickb {
+    margin: 22px;
+    height: 40px;
+    width: 120px;
+    background-color: #0a1d56;
+    color: white;
+}
+
+
+
+.bannersec {
+    display: flex;
+    align-items: center;
+    height: 350px;
+    width: 100vw;
+    background-color: #d3e2fd;
+    margin-bottom: 22px;
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+}
+
+.headingtext {
+    padding-top: 80px;
+    margin: 50px;
+}
+
+.imgsec {
+    margin-bottom: 50px;
+    height: 400px;
+    width: 400px;
+}   
+
+.clickb {
+    margin: 22px;
+    height: 40px;
+    width: 120px;
+    background-color: #0a1d56;
+    color: white;
+}
+
+.Al {
+    display: flex;
+}
+
+.imgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 320px; /* Adjust margin as needed */
+    margin-top: 22px;
+}
+
+
+.imglogo,
+.imglogo2,
+.imglogo3 {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    box-shadow: #d3e2fd;
+    transition: transform 0.1s ease-in-out;
+    background-color: #f5f5f5;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.imgContainer:hover {
+    transform: scale(1.15);
+}
+
+.textHeading {
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+.textp {
+    font-size: 22px;
+    margin-left: 350px;
+    margin-top: 22px;
+    font-weight: 500;
+    font-weight: bold;
+}
+/*  CARD CSS Start here */
+/* .card1{
+  margin-left: 40px;
+  height: 300px;
+  width: 230px;
+  border:  2px solid black;
+} */
+.CardBox {
+    /*border: 1px solid black;*/
+    width:99vw;
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction:row;
+    justify-content:space-between;
+    padding-left:23px;
+}
+
+.Card {
+    flex: 0 0 calc(20% - 20px); /* Adjust the width as needed */
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 10px 20px 10px 50px; 
+    
+    transition: transform 0.3s ease-in-out;
+}
+    .Card:hover {
+        transform: scale(1.05);
+    }

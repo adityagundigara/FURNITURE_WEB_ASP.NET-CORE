@@ -1,0 +1,59 @@
+﻿@model List<FURNITURE_WEB.Models.SofaDataModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/homepage.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="CardBox">
+        @foreach (var furdata in Model)
+        {
+            <div class="Card">
+           <a asp-controller="Products" asp-action="SofaDetail" asp-route-id="@furdata.Id">
+                    <img src="~/Images/AllImages/@furdata.ImagePath" class="card-img-top">
+                    <h5 class="card-title">@furdata.Name</h5>
+                    <p>₹@furdata.Price</p>
+                </a>
+            </div>
+
+        }
+    </div>
+    <footer>
+        <div style="height:20vw;width:100vw;margin-top:230px; background-color:#071730;margin-top:40px; ">
+            <div class="container">
+                <div class="row d-flex justify-content-around" style="color:white; padding-top: 20px;padding-top:100px">
+                    <div class="col-md-3">
+                        <h5 class="text-white">Multimart</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5>Top Categories</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5>Useful Links</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5>Contacts</h5>
+                        <p>Versatile</p>
+                        <p>Diverse</p>
+                        <p>Dynamic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
